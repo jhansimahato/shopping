@@ -31,7 +31,7 @@ void cartfinal()
     printf("\n\t***********************************");
     printf("\n\t***********************************");
     
-    printf("\n%-10s%-20s%-20s","item id","item name","price");
+    printf("\n\t%-10s%-20s%-20s","item id","item name","price");
     if(sign_in==1)
     {
     strcpy(usercarts,search.email);
@@ -45,7 +45,7 @@ void cartfinal()
      }
      while(fread(&s1,sizeof(footwear),1,fp)==1)
      {
-         printf("\n%-10d%-20s%-20s\n",s1.item_id,s1.item_name,s1.pricers);
+         printf("\n\t%-10d%-20s%-20s\n",s1.item_id,s1.item_name,s1.pricers);
         total_bill += s1.price;
      }
     
@@ -103,7 +103,7 @@ void cartfinal()
          rewind(fp1);
          while(fread(&s1,sizeof(footwear),1,fp)==1)
      {
-         printf("\n%-10d%-20s%-20s\n",s1.item_id,s1.item_name,s1.pricers);
+         printf("\n\t%-10d%-20s%-20s\n",s1.item_id,s1.item_name,s1.pricers);
        
      }
     
@@ -216,7 +216,9 @@ void signinfinal()
         rewind(fp);
         if(fp==NULL)
         {
-            printf("\n\tOops, something went wrong");
+            printf("\n\nUser Not registered..");
+            printf("\nplease enter any key to continue..!!");
+            getch();
              Beep(800,300);
                   system("cls");
                    n=displaymenu();
@@ -228,7 +230,7 @@ void signinfinal()
             if(strcmp(search.email,email1)==0 && strcmp(search.password,pword)==0)
             {
                 sign_in=1;
-                printf("\nsigned in");
+                //printf("\nsigned in");
                  printf("\nPress Key To continue .. !!");
                     getch();
                     system("cls");
